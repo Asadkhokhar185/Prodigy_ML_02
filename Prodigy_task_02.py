@@ -32,13 +32,13 @@ optimal_clusters = 5
 kmeans = KMeans(n_clusters=optimal_clusters, init='k-means++', max_iter=300, n_init=10, random_state=42)
 clusters = kmeans.fit_predict(features_normalized)
 
-# Add the cluster labels to the original data
+# Adding the cluster labels to the original data
 data['Cluster'] = clusters
 
-# Display the first few rows with the cluster labels
+# Displaying the first few rows with the cluster labels
 print(data.head())
 
-# Optional: Visualize the clusters
+# Visualizing the clusters
 plt.scatter(features_normalized[:, 0], features_normalized[:, 1], c=clusters, cmap='rainbow')
 plt.title('Clusters of Customers')
 plt.xlabel('Annual Income (k$) [Normalized]')
